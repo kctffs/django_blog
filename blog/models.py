@@ -28,8 +28,12 @@ class Post(models.Model):
 
     def __str__(self):
         return f"{self.title} | written by {self.author}"
+        
 
 class Comment(models.Model):
+    #...
+    challenge = models.SlugField()
+    #...    
     post = models.ForeignKey(
         Post,
         on_delete=models.CASCADE,
